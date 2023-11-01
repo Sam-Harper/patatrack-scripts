@@ -353,7 +353,7 @@ def multiCmsRun(
       os.mkdir(jobdir)
       if daqdir is not None:
         if daqdir.startswith('/'):
-          os.makedirs(daqdir, exists_ok = True)
+          os.makedirs(daqdir, exist_ok = True)
         else:
           os.makedirs(os.path.join(jobdir, daqdir))
       job_threads[job] = singleCmsRun(config.name, jobdir, executable = executable, logdir = thislogdir, keep = [], verbose = verbose, cpus = cpu_assignment[job], gpus = gpu_assignment[job], numa_cpu = numa_cpu_nodes[job], numa_mem = numa_mem_nodes[job], *args)
@@ -422,7 +422,7 @@ def multiCmsRun(
       os.mkdir(jobdir)
       if daqdir is not None:
         if daqdir.startswith('/'):
-          os.makedirs(daqdir, exists_ok = True)
+          os.makedirs(daqdir, exist_ok = True)
         else:
           os.makedirs(os.path.join(jobdir, daqdir))
       job_threads[job] = singleCmsRun(config.name, jobdir, executable = executable, logdir = thislogdir, keep = keep, verbose = verbose, cpus = cpu_assignment[job], gpus = gpu_assignment[job], numa_cpu = numa_cpu_nodes[job], numa_mem = numa_mem_nodes[job], *args)
