@@ -263,7 +263,7 @@ def multiCmsRun(
   # per-job DAQ output directory
   daqdir = None
   if 'EvFDaqDirector' in process.__dict__:
-    daqdir = '%s/run%d' % (process.EvFDaqDirector.baseDir.value(), process.EvFDaqDirector.runNumber.value())
+    daqdir = f'{process.EvFDaqDirector.baseDir.value()}/run{process.EvFDaqDirector.runNumber.value():06d}'
 
   # make sure the explicit temporary directory exists
   if tmpdir is not None:
